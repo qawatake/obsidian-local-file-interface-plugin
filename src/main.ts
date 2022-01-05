@@ -12,8 +12,6 @@ import {
 import { FolderSuggest } from 'suggesters/FolderSuggester';
 import { LocalFileInterfaceProvider } from 'FileInterface';
 
-// Remember to rename these classes and interfaces!
-
 interface LocalFileInterfacePluginSettings {
 	folder: string;
 }
@@ -118,33 +116,5 @@ export default class LocalFileInterfacePlugin extends Plugin {
 
 	async saveSettings() {
 		await this.saveData(this.settings);
-	}
-}
-
-class LocalFileInterfacePluginSettingTab extends PluginSettingTab {
-	plugin: LocalFileInterfacePlugin;
-
-	constructor(app: App, plugin: LocalFileInterfacePlugin) {
-		super(app, plugin);
-		this.plugin = plugin;
-	}
-
-	display(): void {
-		const { containerEl } = this;
-
-		containerEl.empty();
-
-		new Setting(containerEl)
-			.setName('Default location for imported items')
-			.addSearch((component) => {
-				new FolderSuggest(this.app, component.inputEl);
-				component
-					.setPlaceholder('Example: folder1/folder2')
-					.setValue(this.plugin.settings.folder)
-					.onChange((newFolder) => {
-						this.plugin.settings.folder = newFolder;
-						this.plugin.saveSettings();
-					});
-			});
 	}
 }
