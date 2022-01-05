@@ -5,6 +5,10 @@ import {
 	Plugin,
 	PluginSettingTab,
 	Setting,
+	Menu,
+	TFile,
+	TFolder,
+	MenuItem,
 } from 'obsidian';
 import { AppExtension } from './uncover';
 import { FolderSuggest } from 'suggesters/FolderSuggester';
@@ -49,6 +53,38 @@ export default class LocalFileInterfacePlugin extends Plugin {
 				this.app.vault.createBinary(filepath, await file.arrayBuffer());
 			}
 		});
+
+		// file menu: Import file here
+		this.registerEvent(
+			this.app.workspace.on('file-menu', (menu: Menu, file: TFile) => {
+				if (!(file instanceof TFolder)) {
+					return;
+				}
+				menu.addItem((item: MenuItem) => {
+					item.setIcon('file-explorer-glyph')
+						.setTitle('Import local file here')
+						.onClick(() => {
+							console.log('Import Test!');
+						});
+				});
+			})
+		);
+
+		// file memu: Export current file
+		this.registerEvent(
+			this.app.workspace.on('file-menu', (menu: Menu, file: TFile) => {
+				if (!(file instanceof TFile)) {
+					return;
+				}
+				menu.addItem((item: MenuItem) => {
+					item.setIcon('file-explorer-glyph')
+						.setTitle('Export current file')
+						.onClick(() => {
+							new Notice(`Export ${file.name}!`);
+						});
+				});
+			})
+		);
 
 		// // This creates an icon in the left ribbon.
 		// const ribbonIconEl = this.addRibbonIcon(
