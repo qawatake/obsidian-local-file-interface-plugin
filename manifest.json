@@ -1,10 +1,10 @@
 {
-	"id": "obsidian-sample-plugin",
-	"name": "Sample Plugin",
-	"version": "1.0.1",
+	"id": "obsidian-local-file-interface-plugin",
+	"name": "Local File Interface",
+	"version": "0.0.0",
 	"minAppVersion": "0.12.0",
-	"description": "This is a sample plugin for Obsidian. This plugin demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
+	"description": "Provides human interface to local files",
+	"author": "qawatake",
+	"authorUrl": "https://github.com/qawatake/obsidian-local-file-interface-plugin",
 	"isDesktopOnly": false
 }
