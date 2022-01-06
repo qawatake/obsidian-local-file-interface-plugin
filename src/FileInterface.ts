@@ -1,4 +1,12 @@
-import { App, normalizePath, Notice, TFile, TFolder, moment } from 'obsidian';
+import {
+	App,
+	normalizePath,
+	Notice,
+	TFile,
+	TFolder,
+	moment,
+	Platform,
+} from 'obsidian';
 
 export class LocalFileInterfaceProvider {
 	private app: App;
@@ -51,6 +59,18 @@ export class LocalFileInterfaceProvider {
 	}
 
 	async export(file: TFile): Promise<void> {
+		if (Platform.isDesktopApp) {
+			this.exportInDesktop(file);
+		} else if (Platform.isMobileApp) {
+			this.exportInMobile(file);
+		} else {
+			console.log(
+				'ERROR in Local File Interface: unable to find platform type'
+			);
+		}
+	}
+
+	private async exportInDesktop(file: TFile): Promise<void> {
 		const blob = new Blob([await this.app.vault.readBinary(file)]);
 		const url = URL.createObjectURL(blob);
 		const tmpDownloadEl = document.body.createEl('a', {
@@ -60,5 +80,9 @@ export class LocalFileInterfaceProvider {
 		tmpDownloadEl.click();
 		tmpDownloadEl.remove();
 		URL.revokeObjectURL(url);
+	}
+
+	private exportInMobile(file: TFile) {
+		(this.app as any).openWithDefaultApp(file.path);
 	}
 }
