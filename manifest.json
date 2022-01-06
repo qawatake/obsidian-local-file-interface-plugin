@@ -1,7 +1,7 @@
 {
 	"id": "obsidian-local-file-interface-plugin",
 	"name": "Local File Interface",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"minAppVersion": "0.12.0",
 	"description": "Provides commands for moving files in and out of the vault",
 	"author": "qawatake",
