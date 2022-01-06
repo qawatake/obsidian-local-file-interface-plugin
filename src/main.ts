@@ -15,7 +15,6 @@ export default class LocalFileInterfacePlugin extends Plugin {
 	fileInterfaceProvider: LocalFileInterfaceProvider;
 
 	async onload() {
-		console.log(this.app);
 		await this.loadSettings();
 		this.fileInterfaceProvider = new LocalFileInterfaceProvider(this.app);
 
