@@ -1,16 +1,6 @@
-import {
-	App,
-	Notice,
-	Plugin,
-	PluginSettingTab,
-	Setting,
-	Menu,
-	TFile,
-	TFolder,
-	MenuItem,
-} from 'obsidian';
-import { FolderSuggest } from 'suggesters/FolderSuggester';
+import { Notice, Plugin, Menu, TFile, TFolder, MenuItem } from 'obsidian';
 import { LocalFileInterfaceProvider } from 'FileInterface';
+import { LocalFileInterfacePluginSettingTab } from 'Setting';
 
 interface LocalFileInterfacePluginSettings {
 	folder: string;

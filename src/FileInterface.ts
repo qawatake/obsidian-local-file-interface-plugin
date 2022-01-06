@@ -1,4 +1,4 @@
-import { App, normalizePath, Notice, TFile, TFolder } from 'obsidian';
+import { App, normalizePath, Notice, TFile, TFolder, moment } from 'obsidian';
 
 export class LocalFileInterfaceProvider {
 	private app: App;
@@ -22,9 +22,21 @@ export class LocalFileInterfaceProvider {
 					continue;
 				}
 				const filepath = normalizePath(`${folder.path}/${file.name}`);
+
+				// check coincidence
+				const prefixOnConflict =
+					this.app.vault.getAbstractFileByPath(filepath) instanceof
+					TFile
+						? `CONFLICT_${moment().format('YYYY-MM-DD_HH-mm-ss')}_`
+						: '';
+
+				const filepathWithoutConflict = normalizePath(
+					`${folder.path}/${prefixOnConflict}${file.name}`
+				);
+
 				try {
 					await this.app.vault.createBinary(
-						filepath,
+						filepathWithoutConflict,
 						await file.arrayBuffer()
 					);
 				} catch (err) {
