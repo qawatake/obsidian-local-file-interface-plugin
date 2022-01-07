@@ -59,7 +59,7 @@ export default class LocalFileInterfacePlugin extends Plugin {
 		this.addCommand({
 			id: 'local-file-interface-import',
 			name: 'Import local files',
-			callback: () => {
+			callback: async () => {
 				const folder = this.app.vault.getAbstractFileByPath(
 					this.settings.folder
 				);
@@ -71,7 +71,7 @@ export default class LocalFileInterfacePlugin extends Plugin {
 					);
 					return;
 				}
-				this.fileInterfaceProvider.import(folder);
+				await this.fileInterfaceProvider.import(folder);
 			},
 		});
 

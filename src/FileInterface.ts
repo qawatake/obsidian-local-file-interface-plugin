@@ -47,6 +47,7 @@ export class LocalFileInterfaceProvider {
 						filepathWithoutConflict,
 						await file.arrayBuffer()
 					);
+					new Notice(`${file.name} imported!`);
 				} catch (err) {
 					console.log(`ERROR in Local File Interface: ${err}`);
 					new Notice(`Failed to import ${file.name}`);
