@@ -10,7 +10,7 @@ There are four features as follows.
 ### 1. Command to import local files outside the vault
 [![Image from Gyazo](https://i.gyazo.com/0d5c5a7831ff824091869c96b6f7da5c.gif)](https://gyazo.com/0d5c5a7831ff824091869c96b6f7da5c)
 
-### 2 Command to export files in the vault to other locations in the device
+### 2. Command to export files in the vault to other locations in the device
 [![Image from Gyazo](https://i.gyazo.com/038d34f2511eee314dd5de89d7287e36.gif)](https://gyazo.com/038d34f2511eee314dd5de89d7287e36)
 
 ### 3. Folder menu for importing files
