@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.2](https://github.com/qawatake/obsidian-local-file-interface-plugin/compare/0.1.1...0.1.2) - 2026-08-22
+
+- Show settings suggestions when settings open in a pop-out window by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/6
+
 ## [0.1.1](https://github.com/qawatake/obsidian-local-file-interface-plugin/compare/0.1.0...0.1.1) - 2026-08-16
 
 - Bump esbuild to 0.28.1 by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/3
