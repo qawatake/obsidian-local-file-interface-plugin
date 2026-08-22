@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.3](https://github.com/qawatake/obsidian-local-file-interface-plugin/compare/0.1.2...0.1.3) - 2026-08-22
+
+- ci: declare least-privilege GITHUB_TOKEN permissions by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/8
+- ci: commit package-lock.json and build release with npm ci by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/9
+- build: migrate from npm to pnpm by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/11
+
 ## [0.1.2](https://github.com/qawatake/obsidian-local-file-interface-plugin/compare/0.1.1...0.1.2) - 2026-08-22
 
 - Show settings suggestions when settings open in a pop-out window by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/6
