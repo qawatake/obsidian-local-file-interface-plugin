@@ -1,5 +1,5 @@
-import LocalFileInterfacePlugin from 'main';
-import { App, PluginSettingTab, Setting } from 'obsidian';
+import type LocalFileInterfacePlugin from 'main';
+import { type App, PluginSettingTab, Setting } from 'obsidian';
 import { FolderSuggest } from 'suggesters/FolderSuggester';
 
 export class LocalFileInterfacePluginSettingTab extends PluginSettingTab {

@@ -1,6 +1,13 @@
-import { Notice, Plugin, Menu, TFile, TFolder, MenuItem } from 'obsidian';
 import { LocalFileInterfaceProvider } from 'FileInterface';
 import { LocalFileInterfacePluginSettingTab } from 'Setting';
+import {
+	type Menu,
+	type MenuItem,
+	Notice,
+	Plugin,
+	TFile,
+	TFolder,
+} from 'obsidian';
 
 interface LocalFileInterfacePluginSettings {
 	folder: string;
@@ -20,23 +27,21 @@ export default class LocalFileInterfacePlugin extends Plugin {
 
 		// file menu: Import file here
 		this.registerEvent(
-			this.app.workspace.on(
-				'file-menu',
-				(menu: Menu, abstractFile: TFile) => {
-					if (!(abstractFile instanceof TFolder)) {
-						return;
-					}
-
-					const folder = abstractFile;
-					menu.addItem((item: MenuItem) => {
-						item.setIcon('file-explorer-glyph')
-							.setTitle('Import local files here')
-							.onClick(() => {
-								this.fileInterfaceProvider.import(folder);
-							});
-					});
+			this.app.workspace.on('file-menu', (menu: Menu, abstractFile: TFile) => {
+				if (!(abstractFile instanceof TFolder)) {
+					return;
 				}
-			)
+
+				const folder = abstractFile;
+				menu.addItem((item: MenuItem) => {
+					item
+						.setIcon('file-explorer-glyph')
+						.setTitle('Import local files here')
+						.onClick(() => {
+							this.fileInterfaceProvider.import(folder);
+						});
+				});
+			})
 		);
 
 		// file memu: Export current file
@@ -46,7 +51,8 @@ export default class LocalFileInterfacePlugin extends Plugin {
 					return;
 				}
 				menu.addItem((item: MenuItem) => {
-					item.setIcon('file-explorer-glyph')
+					item
+						.setIcon('file-explorer-glyph')
 						.setTitle('Export out of the vault')
 						.onClick(() => {
 							this.fileInterfaceProvider.export(file);
@@ -88,19 +94,13 @@ export default class LocalFileInterfacePlugin extends Plugin {
 			},
 		});
 
-		this.addSettingTab(
-			new LocalFileInterfacePluginSettingTab(this.app, this)
-		);
+		this.addSettingTab(new LocalFileInterfacePluginSettingTab(this.app, this));
 	}
 
 	// onunload() {}
 
 	async loadSettings() {
-		this.settings = Object.assign(
-			{},
-			DEFAULT_SETTINGS,
-			await this.loadData()
-		);
+		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
 	}
 
 	async saveSettings() {

@@ -1,11 +1,11 @@
 import {
-	App,
-	normalizePath,
-	Notice,
-	TFile,
-	TFolder,
+	type App,
 	moment,
+	Notice,
+	normalizePath,
 	Platform,
+	TFile,
+	type TFolder,
 } from 'obsidian';
 
 export class LocalFileInterfaceProvider {
@@ -33,8 +33,7 @@ export class LocalFileInterfaceProvider {
 
 				// check coincidence
 				const prefixOnConflict =
-					this.app.vault.getAbstractFileByPath(filepath) instanceof
-					TFile
+					this.app.vault.getAbstractFileByPath(filepath) instanceof TFile
 						? `CONFLICT_${moment().format('YYYY-MM-DD_HH-mm-ss')}_`
 						: '';
 
