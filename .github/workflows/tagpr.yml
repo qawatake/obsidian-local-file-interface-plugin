@@ -43,4 +43,6 @@ jobs:
             main.js
             manifest.json
           tag_name: ${{ needs.tagpr.outputs.tagpr-tag }}
+          # GitHub-generated notes: merged PRs by category (.github/release.yml), contributors, compare link.
+          generate_release_notes: true
           token: ${{ secrets.GITHUB_TOKEN }}
