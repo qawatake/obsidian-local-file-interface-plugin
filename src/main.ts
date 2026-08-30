@@ -5,6 +5,7 @@ import {
 	type MenuItem,
 	Notice,
 	Plugin,
+	type TAbstractFile,
 	TFile,
 	TFolder,
 } from 'obsidian';
@@ -18,35 +19,38 @@ const DEFAULT_SETTINGS: LocalFileInterfacePluginSettings = {
 };
 
 export default class LocalFileInterfacePlugin extends Plugin {
-	settings: LocalFileInterfacePluginSettings;
-	fileInterfaceProvider: LocalFileInterfaceProvider;
+	override settings!: LocalFileInterfacePluginSettings;
+	fileInterfaceProvider!: LocalFileInterfaceProvider;
 
-	async onload() {
+	override async onload() {
 		await this.loadSettings();
 		this.fileInterfaceProvider = new LocalFileInterfaceProvider(this.app);
 
 		// file menu: Import file here
 		this.registerEvent(
-			this.app.workspace.on('file-menu', (menu: Menu, abstractFile: TFile) => {
-				if (!(abstractFile instanceof TFolder)) {
-					return;
-				}
+			this.app.workspace.on(
+				'file-menu',
+				(menu: Menu, abstractFile: TAbstractFile) => {
+					if (!(abstractFile instanceof TFolder)) {
+						return;
+					}
 
-				const folder = abstractFile;
-				menu.addItem((item: MenuItem) => {
-					item
-						.setIcon('file-explorer-glyph')
-						.setTitle('Import local files here')
-						.onClick(() => {
-							this.fileInterfaceProvider.import(folder);
-						});
-				});
-			})
+					const folder = abstractFile;
+					menu.addItem((item: MenuItem) => {
+						item
+							.setIcon('file-explorer-glyph')
+							.setTitle('Import local files here')
+							.onClick(() => {
+								this.fileInterfaceProvider.import(folder);
+							});
+					});
+				}
+			)
 		);
 
 		// file memu: Export current file
 		this.registerEvent(
-			this.app.workspace.on('file-menu', (menu: Menu, file: TFile) => {
+			this.app.workspace.on('file-menu', (menu: Menu, file: TAbstractFile) => {
 				if (!(file instanceof TFile)) {
 					return;
 				}
