@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/qawatake/obsidian-local-file-interface-plugin/compare/0.1.3...0.1.4) - 2026-08-30
+
+### Changes
+- ci: tier Dependabot cooldown by semver level by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/29
+- build(deps-dev): bump @biomejs/biome from 2.5.8 to 2.5.10 in the npm-minor-patch group by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/31
+- chore: sync dev-environment improvements from core-search-assistant by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/32
+
 ## [0.1.3](https://github.com/qawatake/obsidian-local-file-interface-plugin/compare/0.1.2...0.1.3) - 2026-08-23
 
 ### Changes
