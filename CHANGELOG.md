@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.1.4](https://github.com/qawatake/obsidian-local-file-interface-plugin/compare/0.1.3...0.1.4) - 2026-09-12
+
+### Changes
+- ci: tier Dependabot cooldown by semver level by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/29
+- build(deps-dev): bump @biomejs/biome from 2.5.8 to 2.5.10 in the npm-minor-patch group by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/31
+- chore: sync dev-environment improvements from core-search-assistant by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/32
+- chore: schedule Dependabot on Saturday 03:00 JST by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/37
+- build(deps-dev): bump @biomejs/biome from 2.5.10 to 2.5.11 in the npm-minor-patch group by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/36
+- chore: use flat 7-day cooldown for github-actions by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/38
+- build(deps): bump jdx/mise-action from 4.2.5 to 4.3.0 by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/35
+- build(deps): bump Songmu/tagpr from 1.20.1 to 1.20.2 by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/33
+- build(deps): bump softprops/action-gh-release from 3.0.2 to 3.0.3 by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/34
+- build(deps): bump Songmu/tagpr from 1.20.2 to 1.20.3 by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/39
+- build(deps-dev): bump @biomejs/biome from 2.5.11 to 2.5.12 in the npm-minor-patch group by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/40
+- Tighten Dependabot and CI supply-chain policy by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/41
+- Point biome.jsonc at the installed Biome schema by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/43
+- Check that config $schema versions match package.json by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/44
+- Align check-config-schema.mjs imports with Biome's order by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/45
+- Pin dependency ranges to the resolved versions by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/46
+
 ## [0.1.3](https://github.com/qawatake/obsidian-local-file-interface-plugin/compare/0.1.2...0.1.3) - 2026-08-23
 
 ### Changes
