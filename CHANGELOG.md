@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.1.5](https://github.com/qawatake/obsidian-local-file-interface-plugin/compare/0.1.4...0.1.5) - 2026-10-31
+
+### Changes
+- build(deps): bump jdx/mise-action from 5.0.1 to 5.1.1 by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/59
+- build(deps-dev): bump obsidian from 1.13.1 to 1.14.4 in the npm-minor-patch group by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/61
+- build(deps): bump actions/upload-artifact from 7.0.1 to 7.0.2 by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/58
+- build(deps): bump Songmu/tagpr from 1.21.1 to 1.21.2 by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/60
+- chore: bump pnpm 10.33.2 -> 10.34.7 by @qawatake in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/66
+- build(deps): bump Songmu/tagpr from 1.21.2 to 1.21.3 by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/63
+- build(deps-dev): bump @types/node from 24.19.1 to 24.19.2 in the npm-minor-patch group across 1 directory by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/65
+- build(deps): bump jdx/mise-action from 5.1.1 to 5.2.0 by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/64
+- build(deps): bump jdx/mise-action from 5.2.0 to 5.2.2 by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/68
+- build(deps): bump Songmu/tagpr from 1.21.3 to 1.21.4 by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/67
+- build(deps-dev): bump @biomejs/biome from 2.5.15 to 2.6.2 in the npm-minor-patch group by @dependabot[bot] in https://github.com/qawatake/obsidian-local-file-interface-plugin/pull/69
+
 ## [0.1.4](https://github.com/qawatake/obsidian-local-file-interface-plugin/compare/0.1.3...0.1.4) - 2026-10-11
 
 ### Changes
